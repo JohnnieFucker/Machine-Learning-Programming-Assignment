@@ -13,11 +13,15 @@ J = 0;
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
 
-for i = 1:m,
-  J= J+(theta(1)*X(i,1)+theta(2)*X(i,2)-y(i))^2;
-  %disp(J);
-end;
-J = J/2/m;
+%loop way
+%for i = 1:m,
+%  J= J+(theta(1)*X(i,1)+theta(2)*X(i,2)-y(i))^2;
+%end;
+%J = J/2/m;
+
+%matrix way
+J = sum((X*theta-y).^2)/(2*m);
+
 
 % =========================================================================
 

@@ -16,18 +16,22 @@ for iter = 1:num_iters
     % Hint: While debugging, it can be useful to print out the values
     %       of the cost function (computeCost) and gradient here.
     %
-    s1 = 0;
-    s2 = 0;
 
-    for iter2 = 1:m,
-       s1 = s1+(theta(1)*X(iter2,1)+theta(2)*X(iter2,2)-y(iter2));
-       s2 = s2+(theta(1)*X(iter2,1)+theta(2)*X(iter2,2)-y(iter2))*X(iter2,2);
-    end;
+    %loop way
+    %s1 = 0;
+    %s2 = 0;
 
-    theta(1) = theta(1) - alpha*s1/m;
-    theta(2) = theta(2) - alpha*s2/m;
+    %for iter2 = 1:m,
+    %   s1 = s1+(theta(1)*X(iter2,1)+theta(2)*X(iter2,2)-y(iter2));
+    %   s2 = s2+(theta(1)*X(iter2,1)+theta(2)*X(iter2,2)-y(iter2))*X(iter2,2);
+    %end;
+
+    %theta(1) = theta(1) - alpha*s1/m;
+    %theta(2) = theta(2) - alpha*s2/m;
     %disp(theta);
 
+    %matrix way
+    theta = theta - alpha * (X' * (X * theta - y)) / m;
     % ============================================================
 
     % Save the cost J in every iteration    

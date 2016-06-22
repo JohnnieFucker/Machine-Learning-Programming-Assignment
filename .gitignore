@@ -1,6 +1,8 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea/
 .DS_Store
+*/octave-workspace
+
 ### OSX template
 .AppleDouble
 .LSOverride
